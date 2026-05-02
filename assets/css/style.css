@@ -1,0 +1,702 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Pakai font yang lebih modern */
+}
+
+/* Background Full Layar Hijau Gradasi */
+.login-container {
+    background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Box Login Transparan (Glassmorphism) */
+.login-box {
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px 40px;
+    width: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+}
+
+.box-header h2 {
+    margin-bottom: 5px;
+}
+
+.box-header p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* Input Form */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+}
+
+/* Tombol Login */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #2E7D32;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #1b5e20;
+    transform: scale(1.02);
+}
+
+/* Link Kembali */
+.box-footer hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Alert Error */
+.alert, .alert-error {
+    background: rgba(255, 0, 0, 0.2);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+.container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+/* Membuat Layout Grid (Biar tidak memanjang ke bawah terus) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Card Berita / Fasilitas / Guru */
+.card-item {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    text-align: center;
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.card-item:hover {
+    transform: translateY(-10px);
+}
+
+.card-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h4 {
+    color: #2E7D32; /* Hijau Figma */
+    margin-bottom: 10px;
+}
+
+/* Banner / Hero Section */
+.hero {
+    background: linear-gradient(rgba(46, 125, 50, 0.7), rgba(46, 125, 50, 0.7)), url('../../uploads/identitas/foto_sekolah.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 0 0 50px 50px; /* Lengkungan di bawah banner */
+    margin-bottom: 30px;
+}
+/* Container Utama */
+.container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* Header & Navigasi */
+.header {
+    background-color: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-logo {
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo h2 a {
+    color: #2E7D32;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.header-menu {
+    float: right;
+    margin-top: 15px;
+}
+
+.header-menu li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.header-menu li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.header-menu li a:hover {
+    color: #4CAF50;
+}
+
+/* Banner Modern */
+.banner {
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+    border-radius: 0 0 50px 50px; /* Lengkungan bawah ala Figma */
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 50px 50px;
+}
+
+.banner-text {
+    position: relative;
+    z-index: 1;
+}
+
+/* Grid System untuk Pengurus & Kegiatan */
+.section {
+    padding: 60px 0;
+}
+
+.section h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #2E7D32;
+    position: relative;
+    display: inline-block;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Card Style ala Figma */
+.thumbnail-box {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    height: 100%;
+}
+
+.thumbnail-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.thumbnail-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.thumbnail-text {
+    padding: 15px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+}
+
+.thumbnail-link {
+    text-decoration: none;
+}
+
+/* Sambutan Kepsek */
+.foto-kepsek {
+    border-radius: 50%;
+    border: 5px solid #C8E6C9;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #2E7D32;
+    color: white;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+/* Clearfix untuk float */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.btn-login-nav {
+    background-color: #2E7D32;
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+.btn-login-nav:hover {
+    background-color: #4CAF50;
+}
+/* Penyesuaian Logo agar sejajar dengan teks */
+.header-logo img {
+    width: 50px; /* Ukuran logo lebih proporsional */
+    height: auto;
+    float: left;
+    margin-right: 15px;
+}
+
+.header-logo h2 {
+    line-height: 50px; /* Samakan dengan tinggi logo agar sejajar */
+    font-size: 20px;
+}
+
+/* Tombol Login di Navigasi */
+.btn-login-nav {
+    background-color: #2E7D32;
+    color: white !important;
+    padding: 8px 20px !important;
+    border-radius: 20px;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.btn-login-nav:hover {
+    background-color: #1b5e20;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Mobile Menu Style (Modern Overlay) */
+.box-menu-mobile {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(46, 125, 50, 0.95);
+    z-index: 1000;
+    padding: 50px;
+}
+
+.mobile-menu-content ul {
+    list-style: none;
+    padding-top: 50px;
+}
+
+.mobile-menu-content ul li {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.mobile-menu-content ul li a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.close-menu {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Sembunyikan tombol menu mobile di layar besar */
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Sembunyikan menu utama di layar kecil */
+@media (max-width: 767px) {
+    .header-menu {
+        display: none;
+    }
+    .header-logo h2 {
+        font-size: 16px;
+    }
+}
+footer {
+    background-color: #2E7D32; /* Hijau Tua Figma */
+    color: white;
+    padding: 50px 0 30px 0;
+    margin-top: 50px;
+    border-radius: 50px 50px 0 0; /* Lengkungan di bagian atas footer ala Figma */
+}
+
+.footer-info h3 {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.copyright {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* Biar teks di container footer tetap di tengah */
+.text-center {
+    text-align: center;
+}
+/* Layout Wrapper untuk Admin */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar di Kiri */
+.sidebar {
+    width: 250px;
+    background-color: #2E7D32;
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    height: 100vh;    /* Ganti 100% jadi 100vh */
+    top: 0;           /* Tambahkan ini */
+    left: 0;          /* Tambahkan ini */
+    overflow-y: auto; /* INI KUNCINYA BIAR BISA DI-SCROLL */
+}
+
+/* Tambahan biar scrollbar-nya tipis dan gak ngerusak desain */
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    padding: 15px 25px;
+    display: block;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.sidebar ul li a:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    padding-left: 35px;
+}
+
+/* Content Area di Kanan */
+.content {
+    flex: 1;
+    margin-left: 250px;
+    background-color: #f4f7f6;
+    padding: 30px;
+}
+
+/* Card Statistik di Dashboard */
+.admin-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card-stat {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-left: 5px solid #4CAF50;
+}
+
+.card-stat h4 {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.card-stat p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+/* Layout Admin */
+.admin-wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 260px;
+    background: #2E7D32; /* Hijau Figma */
+    min-height: 100vh;
+    color: white;
+    padding: 20px;
+    position: fixed;
+}
+
+.content {
+    margin-left: 250px; /* Samakan dengan lebar sidebar kamu */
+    padding: 30px;
+    background-color: #f4f7f6;
+    min-height: 100vh;
+    display: block; /* Pastikan ini block */
+    width: auto;    /* Biarkan dia mengisi sisa ruang secara otomatis */
+}
+
+/* Card Statistik Dashboard */
+.admin-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card-stat {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.stat-icon {
+    font-size: 40px;
+    color: #4CAF50;
+    margin-right: 20px;
+}
+
+.stat-info h4 {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.stat-info h3 {
+    font-size: 28px;
+    margin: 5px 0 0 0;
+}
+
+.welcome-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+    border-left: 6px solid #2E7D32;
+}
+
+.menu-label {
+    display: block;
+    margin: 20px 0 10px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+}
+/* Pastikan body tidak ada margin/padding default */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Area konten utama harus punya margin kiri sebesar lebar sidebar */
+.content {
+    margin-left: 260px; /* Sesuaikan dengan lebar .sidebar kamu */
+    padding: 40px;
+    width: calc(100% - 260px); /* Agar konten tidak meluber ke kanan */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Rapikan Tabel agar Responsif dan Cantik */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.table th {
+    background-color: #2E7D32; /* Hijau sesuai desain kamu */
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+.sidebar-logo {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+}
+
+.sidebar-menu li a {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara ikon dan tulisan */
+}
+/* Styling untuk Form Input Admin */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.input-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* Penting biar nggak meluber */
+}
+
+.input-control:focus {
+    border-color: #2E7D32;
+    outline: none;
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.2);
+}
+
+.btn-submit {
+    background: #2E7D32;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background: #1b5e20;
+}
+
+.btn-back {
+    background: #f4f4f4;
+    color: #666;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .card-body {
+        padding: 30px 20px;
+        font-size: 1rem;
+    }
+}

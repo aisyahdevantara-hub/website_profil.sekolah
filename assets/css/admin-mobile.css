@@ -1,0 +1,172 @@
+/* Admin Mobile Responsive - Desktop Unchanged */
+
+/* Mobile sidebar hide + overlay */
+@media (max-width: 768px) {
+  .admin-wrapper {
+    position: relative;
+  }
+
+  .sidebar {
+    left: -260px;
+    transition: left 0.3s ease;
+    z-index: 1001;
+  }
+
+  .sidebar-open .sidebar {
+    left: 0;
+  }
+
+  .content {
+    margin-left: 0 !important;
+    width: 100%;
+    padding: 20px 15px;
+  }
+
+  .content-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  /* Hamburger button - desktop hidden */
+  .mobile-menu-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #2E7D32;
+    cursor: pointer;
+    padding: 5px;
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-menu-btn {
+      display: block;
+    }
+  }
+
+  /* Overlay when sidebar open */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+
+  .sidebar-open .sidebar-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Hide desktop menu btn */
+  .mobile-menu-btn.desktop-only {
+    display: none;
+  }
+
+  /* Responsive tables */
+  .table {
+    font-size: 14px;
+  }
+
+  .table th, .table td {
+    padding: 10px 8px;
+  }
+
+  /* Stack table rows for ultra-small screens */
+  @media (max-width: 480px) {
+    .table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .table thead {
+      display: none;
+    }
+
+    .table tr {
+      display: block;
+      margin-bottom: 15px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .table td {
+      display: block;
+      text-align: right;
+      padding: 5px 10px;
+      position: relative;
+      border: none;
+    }
+
+    .table td:before {
+      content: attr(data-label) ": ";
+      float: left;
+      font-weight: bold;
+      color: #2E7D32;
+    }
+  }
+
+  /* Form responsive */
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .input-control, textarea.input-control {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+
+  /* Buttons stack */
+  .btn-back, .btn-submit {
+    flex: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Content header buttons */
+  div[style*="display: flex"] {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  div[style*="display: flex"] a, div[style*="display: flex"] form {
+    width: 100%;
+  }
+
+  /* Content header user info */
+  .content-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Box padding reduce */
+  .box-body {
+    padding: 20px;
+  }
+
+  /* Card stats */
+  .admin-card-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .content {
+    margin-left: 220px;
+  }
+}
+

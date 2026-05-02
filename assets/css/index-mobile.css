@@ -1,0 +1,120 @@
+/* Index.php Mobile Cleanup - No Feature Changes */
+
+@media (max-width: 768px) {
+  /* Container full width */
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  /* Banner height adjust */
+  .banner {
+    height: 300px !important;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .banner-text h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .banner-text p {
+    font-size: 16px;
+  }
+
+  /* Sambutan kepsek - center & compact */
+  .section {
+    padding: 40px 0;
+  }
+
+  .section h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .foto-kepsek {
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+  }
+
+  p[style*="max-width: 800px"] {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Grid 1-column mobile */
+  .grid-container {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  /* Thumbnail cards taller on mobile */
+  .thumbnail-img {
+    height: 250px;
+  }
+
+  .thumbnail-text {
+    padding: 20px 15px;
+    font-size: 16px;
+  }
+
+  /* Text sections full width */
+  div.text-center {
+    padding: 0 10px;
+  }
+
+  /* Prevent horizontal scroll */
+  * {
+    max-width: 100%;
+  }
+
+  /* Button/link improvements */
+  .thumbnail-link {
+    margin: 0;
+  }
+
+  /* Header logo smaller */
+  .header-logo img {
+    width: 40px;
+  }
+
+  .header-logo h2 {
+    font-size: 18px;
+  }
+
+  /* Typography scale */
+  h3 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* Ultra-small screens */
+@media (max-width: 480px) {
+  .container {
+    width: 98%;
+  }
+
+  .banner {
+    height: 250px !important;
+  }
+
+  .thumbnail-img {
+    height: 220px;
+  }
+
+  .section {
+    padding: 30px 0;
+  }
+}
+
