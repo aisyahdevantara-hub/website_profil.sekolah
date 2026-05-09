@@ -383,11 +383,43 @@ footer {
 
 /* Sembunyikan menu utama di layar kecil */
 @media (max-width: 767px) {
+    /* Jangan bergantung float supaya tombol menu mobile posisinya rapi */
+    .header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Hilangkan menu desktop */
     .header-menu {
         display: none;
     }
+
+    /* Override float pada logo */
+    .header-logo {
+        float: none !important;
+    }
+
     .header-logo h2 {
         font-size: 16px;
+    }
+
+    /* Rapikan tombol menu mobile (tombol user berupa <a>) */
+    .mobile-menu-btn {
+        display: block;
+        float: none !important;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    .mobile-menu-btn a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        padding: 8px 14px;
+        border-radius: 10px;
+        background: transparent;
     }
 }
 footer {
