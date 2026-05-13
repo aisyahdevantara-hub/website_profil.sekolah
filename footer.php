@@ -1,3 +1,5 @@
+<?php include 'sidebar-user.php'; ?>
+
 <footer>
     <div class="container text-center">
         <div class="footer-info">

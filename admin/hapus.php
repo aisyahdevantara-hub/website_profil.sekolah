@@ -50,4 +50,28 @@
 
     echo "<script>window.location='kegiatan.php?success=Data Berhasil Dihapus'</script>";
 }
+
+    if(isset($_GET['idsiswa'])){
+        // Foto siswa dihapus
+        $siswa = mysqli_query($conn, "SELECT foto FROM siswa WHERE id = '".$_GET['idsiswa']."'");
+        if(mysqli_num_rows($siswa) > 0){
+            $p = mysqli_fetch_object($siswa);
+            if($p->foto && file_exists("../uploads/siswa/" . $p->foto)){
+                unlink("../uploads/siswa/" . $p->foto);
+            }
+        }
+        // CASCADE akan menghapus ortu dan perkembangan terkait
+        $delete = mysqli_query($conn, "DELETE FROM siswa WHERE id = '".$_GET['idsiswa']."'");
+        echo "<script>window.location='siswa.php?success=Data Siswa Berhasil Dihapus'</script>";
+    }
+
+    if(isset($_GET['idortu'])){
+        $delete = mysqli_query($conn, "DELETE FROM ortu WHERE id = '".$_GET['idortu']."'");
+        echo "<script>window.location='ortu.php?success=Akun Orang Tua Berhasil Dihapus'</script>";
+    }
+
+    if(isset($_GET['idperkembangan'])){
+        $delete = mysqli_query($conn, "DELETE FROM perkembangan WHERE id = '".$_GET['idperkembangan']."'");
+        echo "<script>window.location='perkembangan.php?success=Laporan Berhasil Dihapus'</script>";
+    }
 ?>

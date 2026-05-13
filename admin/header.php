@@ -68,6 +68,11 @@
                     <li><a href="kegiatan.php"><i class="fa fa-calendar-alt"></i> Data Kegiatan</a></li>
                     <li><a href="pesan.php"><i class="fa fa-envelope"></i> 📨 Pesan Masuk</a></li>
 
+                    <small class="menu-label">DATA SISWA & ORANG TUA</small>
+                    <li><a href="siswa.php"><i class="fa fa-child"></i> Data Siswa</a></li>
+                    <li><a href="ortu.php"><i class="fa fa-users"></i> Data Orang Tua</a></li>
+                    <li><a href="perkembangan.php"><i class="fa fa-chart-line"></i> Laporan Perkembangan</a></li>
+
                     <small class="menu-label">PENGATURAN</small>
 
 

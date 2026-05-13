@@ -1,0 +1,112 @@
+/* ===== Ortu Dashboard CSS ===== */
+
+/* Reuse admin layout but with parent-specific tweaks */
+.admin-wrapper .sidebar {
+    background: linear-gradient(180deg, #2E7D32 0%, #1B5E20 100%);
+}
+
+/* Content header styling */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.content-header .user-info {
+    font-size: 15px;
+    color: #555;
+}
+
+.content-header .btn-view-site {
+    background: #2E7D32;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.content-header .btn-view-site:hover {
+    background: #1B5E20;
+}
+
+/* Box styling */
+.box {
+    background: white;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.box .box-body {
+    padding: 25px;
+}
+
+/* Main content inner */
+.main-content-inner {
+    padding: 10px 0;
+}
+
+.content-header-title h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.content-header-title p {
+    font-size: 14px;
+}
+
+/* Mobile responsive for ortu dashboard */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+    }
+    
+    body.sidebar-open .sidebar {
+        transform: translateX(0);
+    }
+    
+    .content {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+    
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 1000;
+    }
+    
+    body.sidebar-open .sidebar-overlay {
+        display: block;
+    }
+    
+    .mobile-menu-btn {
+        display: inline-flex !important;
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 5px 10px;
+        color: #333;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-menu-btn {
+        display: none !important;
+    }
+}

@@ -1,0 +1,157 @@
+/* ===== User Sidebar (Halaman Publik) ===== */
+
+.user-sidebar {
+    position: fixed;
+    right: 0;
+    top: 70px;
+    width: 280px;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    background: #ffffff;
+    border-left: 1px solid #eee;
+    padding: 20px 15px;
+    z-index: 100;
+    box-shadow: -2px 0 15px rgba(0,0,0,0.05);
+}
+
+/* Scrollbar sidebar */
+.user-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+.user-sidebar::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+/* Widget */
+.sidebar-widget {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.sidebar-widget:last-child {
+    border-bottom: none;
+}
+
+.sidebar-widget h4 {
+    font-size: 14px;
+    color: #2E7D32;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.sidebar-widget .widget-content p {
+    margin-bottom: 3px;
+}
+
+/* Quick Links */
+.quick-links {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links li {
+    margin-bottom: 5px;
+}
+
+.quick-links li a {
+    display: block;
+    padding: 8px 12px;
+    color: #555;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.quick-links li a:hover {
+    background: #e8f5e9;
+    color: #2E7D32;
+    padding-left: 18px;
+}
+
+/* Recent Items */
+.recent-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    transition: 0.2s;
+}
+
+.recent-item:hover {
+    background: #fafafa;
+    border-radius: 8px;
+    padding-left: 5px;
+}
+
+.recent-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.recent-text {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* Tombol Login Ortu */
+.btn-login-ortu {
+    display: block;
+    text-align: center;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #66BB6A, #2E7D32);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+}
+
+.btn-login-ortu:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+}
+
+/* Adjust body to account for sidebar */
+body {
+    padding-right: 280px;
+}
+
+/* Ensure footer is full width */
+footer {
+    margin-right: -280px;
+    padding-right: 280px;
+}
+
+/* Login page should not have sidebar padding */
+.login-container {
+    margin-right: -280px;
+}
+
+/* ===== Mobile: Hide sidebar ===== */
+@media (max-width: 991px) {
+    .user-sidebar {
+        display: none;
+    }
+    
+    body {
+        padding-right: 0;
+    }
+    
+    footer {
+        margin-right: 0;
+        padding-right: 0;
+    }
+}
