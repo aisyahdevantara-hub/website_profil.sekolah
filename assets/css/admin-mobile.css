@@ -1,62 +1,51 @@
-/* Admin Mobile Responsive - Desktop Unchanged */
+/* Admin Mobile Responsive */
 
-/* Mobile sidebar hide + overlay */
 @media (max-width: 768px) {
+  /* Layout */
   .admin-wrapper {
-    position: relative;
     flex-direction: column;
   }
 
+  /* Sidebar: hidden by default, slide from left */
   .sidebar {
-    position: fixed;
-    left: -260px;
-    top: 0;
-    width: 260px;
-    height: 100vh;
+    position: fixed !important;
+    left: -270px !important;
+    top: 0 !important;
+    width: 260px !important;
+    height: 100vh !important;
     transition: left 0.3s ease;
     z-index: 1001;
     overflow-y: auto;
   }
 
   .sidebar-open .sidebar {
-    left: 0;
+    left: 0 !important;
   }
 
+  /* Content: full width, no margin */
   .content {
     margin-left: 0 !important;
     width: 100% !important;
     min-width: 0 !important;
-    padding: 15px;
+    padding: 15px !important;
     box-sizing: border-box;
-    overflow-x: hidden;
-  }
-
-  .content-header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
   }
 
   /* Hamburger button */
   .mobile-menu-btn {
+    display: block !important;
     background: none;
     border: none;
     font-size: 24px;
     color: #2E7D32;
     cursor: pointer;
     padding: 5px;
-    display: block !important;
   }
 
-  /* Overlay when sidebar open */
+  /* Overlay */
   .sidebar-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0,0,0,0.5);
     z-index: 1000;
     opacity: 0;
@@ -69,120 +58,91 @@
     visibility: visible;
   }
 
-  /* Content header title */
+  /* Content header */
+  .content-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
   .content-header-title h2 {
     font-size: 18px;
   }
 
-  .content-header-title p {
-    font-size: 13px;
-  }
-
-  /* View site button - hide text on mobile */
-  .btn-view-site {
-    font-size: 12px;
-    padding: 6px 12px !important;
-  }
-
-  .user-info {
-    font-size: 13px;
-  }
-
-  /* Responsive tables - HORIZONTAL SCROLL */
-  .table {
-    font-size: 13px;
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .table th, .table td {
-    padding: 10px 8px;
-    white-space: nowrap;
-  }
-
-  /* Box padding reduce */
+  /* Box */
   .box {
     border-radius: 12px !important;
   }
 
   .box-body {
-    padding: 15px;
+    padding: 15px !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
-  /* Action header (Tambah button + Search) */
-  .box-body > div[style*="display: flex"][style*="justify-content: space-between"] {
+  /* TABEL: tetap horizontal, scroll jika terlalu lebar */
+  .table {
+    min-width: 500px;
+    font-size: 13px;
+  }
+
+  /* Gambar di tabel lebih kecil */
+  .table img {
+    max-width: 80px !important;
+    height: auto !important;
+  }
+
+  /* Tombol Tambah + Search bar stack vertikal */
+  .box-body > div[style*="display: flex"][style*="justify-content"] {
     flex-direction: column !important;
+    gap: 10px !important;
+    align-items: stretch !important;
+  }
+
+  .box-body > div[style*="display: flex"][style*="justify-content"] a {
+    text-align: center;
+  }
+
+  .box-body > div[style*="display: flex"][style*="justify-content"] form {
+    width: 100% !important;
+  }
+
+  /* Form inputs */
+  .input-control, textarea.input-control, select.input-control {
+    font-size: 16px !important;
+  }
+
+  /* Card stats grid */
+  .admin-card-grid {
+    grid-template-columns: 1fr 1fr !important;
     gap: 10px !important;
   }
 
-  .box-body > div[style*="display: flex"][style*="justify-content: space-between"] a {
-    width: 100% !important;
-    text-align: center;
-  }
-
-  .box-body > div[style*="display: flex"][style*="justify-content: space-between"] form {
-    width: 100% !important;
-  }
-
-  /* Form responsive */
-  .form-group {
-    margin-bottom: 15px;
-  }
-
-  .input-control, textarea.input-control, select.input-control {
-    font-size: 16px !important; /* Prevent zoom on iOS */
-  }
-
-  /* Buttons full-width */
-  .btn-back, .btn-submit {
-    width: 100% !important;
-    text-align: center;
-  }
-
-  /* Card stats */
-  .admin-card-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  /* Main content inner */
-  .main-content-inner {
-    padding: 0;
-  }
-
-  /* Box max-width override for forms */
+  /* Form boxes full width */
   .box[style*="max-width"] {
     max-width: 100% !important;
   }
 
-  /* Filter forms */
-  form[style*="display: flex"][style*="gap"] {
-    flex-direction: column !important;
+  /* Button submit/back full width */
+  .btn-submit, .btn-back {
     width: 100% !important;
-  }
-
-  form[style*="display: flex"][style*="gap"] select {
-    width: 100% !important;
+    text-align: center;
   }
 }
 
 /* Hide hamburger on desktop */
 @media (min-width: 769px) {
   .mobile-menu-btn {
-    display: none;
+    display: none !important;
   }
 }
 
-/* Tablet adjustments */
+/* Tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
   .sidebar {
-    width: 220px;
+    width: 220px !important;
   }
 
   .content {
     margin-left: 220px !important;
-    width: calc(100% - 220px) !important;
   }
 }
