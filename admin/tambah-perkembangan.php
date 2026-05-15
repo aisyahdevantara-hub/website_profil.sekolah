@@ -18,8 +18,7 @@
         $capaian = $_POST['capaian'];
         $catatan = addslashes($_POST['catatan']);
         
-        // Ambil guru_id dari session (pengguna yang login)
-        $guru_id = $_SESSION['uid'];
+        $guru_id = $_POST['guru_id'];
 
         $simpan = mysqli_query($conn, "INSERT INTO perkembangan (siswa_id, tanggal, semester, kategori, aspek, capaian, catatan, guru_id) VALUES (
             '$siswa_id', '$tanggal', '$semester', '$kategori', '$aspek', '$capaian', '$catatan', '$guru_id'
@@ -79,6 +78,19 @@
                         <option value="Bahasa">Bahasa</option>
                         <option value="Sosial-Emosional">Sosial-Emosional</option>
                         <option value="Seni">Seni</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-weight: bold;">Guru Penilai</label>
+                    <select name="guru_id" class="input-control" required>
+                        <option value="">-- Pilih Guru --</option>
+                        <?php 
+                            $guru_list = mysqli_query($conn, "SELECT * FROM guru ORDER BY nama_lengkap ASC");
+                            while($g = mysqli_fetch_array($guru_list)){
+                        ?>
+                        <option value="<?= $g['id'] ?>"><?= $g['nama_lengkap'] ?> - <?= $g['jabatan'] ?></option>
+                        <?php } ?>
                     </select>
                 </div>
 

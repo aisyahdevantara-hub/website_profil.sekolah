@@ -4,12 +4,18 @@
 @media (max-width: 768px) {
   .admin-wrapper {
     position: relative;
+    flex-direction: column;
   }
 
   .sidebar {
+    position: fixed;
     left: -260px;
+    top: 0;
+    width: 260px;
+    height: 100vh;
     transition: left 0.3s ease;
     z-index: 1001;
+    overflow-y: auto;
   }
 
   .sidebar-open .sidebar {
@@ -18,17 +24,22 @@
 
   .content {
     margin-left: 0 !important;
-    width: 100%;
-    padding: 20px 15px;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .content-header {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
-    align-items: flex-start;
+    flex-wrap: wrap;
   }
 
-  /* Hamburger button - desktop hidden */
+  /* Hamburger button */
   .mobile-menu-btn {
     background: none;
     border: none;
@@ -36,13 +47,7 @@
     color: #2E7D32;
     cursor: pointer;
     padding: 5px;
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-    .mobile-menu-btn {
-      display: block;
-    }
+    display: block !important;
   }
 
   /* Overlay when sidebar open */
@@ -64,98 +69,109 @@
     visibility: visible;
   }
 
-  /* Hide desktop menu btn */
-  .mobile-menu-btn.desktop-only {
-    display: none;
+  /* Content header title */
+  .content-header-title h2 {
+    font-size: 18px;
   }
 
-  /* Responsive tables */
+  .content-header-title p {
+    font-size: 13px;
+  }
+
+  /* View site button - hide text on mobile */
+  .btn-view-site {
+    font-size: 12px;
+    padding: 6px 12px !important;
+  }
+
+  .user-info {
+    font-size: 13px;
+  }
+
+  /* Responsive tables - HORIZONTAL SCROLL */
   .table {
-    font-size: 14px;
+    font-size: 13px;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .table th, .table td {
     padding: 10px 8px;
+    white-space: nowrap;
   }
 
-  /* Stack table rows for ultra-small screens */
-  @media (max-width: 480px) {
-    .table {
-      display: block;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
+  /* Box padding reduce */
+  .box {
+    border-radius: 12px !important;
+  }
 
-    .table thead {
-      display: none;
-    }
+  .box-body {
+    padding: 15px;
+  }
 
-    .table tr {
-      display: block;
-      margin-bottom: 15px;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      padding: 10px;
-    }
+  /* Action header (Tambah button + Search) */
+  .box-body > div[style*="display: flex"][style*="justify-content: space-between"] {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
 
-    .table td {
-      display: block;
-      text-align: right;
-      padding: 5px 10px;
-      position: relative;
-      border: none;
-    }
+  .box-body > div[style*="display: flex"][style*="justify-content: space-between"] a {
+    width: 100% !important;
+    text-align: center;
+  }
 
-    .table td:before {
-      content: attr(data-label) ": ";
-      float: left;
-      font-weight: bold;
-      color: #2E7D32;
-    }
+  .box-body > div[style*="display: flex"][style*="justify-content: space-between"] form {
+    width: 100% !important;
   }
 
   /* Form responsive */
   .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
-  .input-control, textarea.input-control {
-    font-size: 16px; /* Prevent zoom on iOS */
+  .input-control, textarea.input-control, select.input-control {
+    font-size: 16px !important; /* Prevent zoom on iOS */
   }
 
-  /* Buttons stack */
+  /* Buttons full-width */
   .btn-back, .btn-submit {
-    flex: none;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  /* Content header buttons */
-  div[style*="display: flex"] {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  div[style*="display: flex"] a, div[style*="display: flex"] form {
-    width: 100%;
-  }
-
-  /* Content header user info */
-  .content-header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* Box padding reduce */
-  .box-body {
-    padding: 20px;
+    width: 100% !important;
+    text-align: center;
   }
 
   /* Card stats */
   .admin-card-grid {
     grid-template-columns: 1fr;
     gap: 15px;
+  }
+
+  /* Main content inner */
+  .main-content-inner {
+    padding: 0;
+  }
+
+  /* Box max-width override for forms */
+  .box[style*="max-width"] {
+    max-width: 100% !important;
+  }
+
+  /* Filter forms */
+  form[style*="display: flex"][style*="gap"] {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  form[style*="display: flex"][style*="gap"] select {
+    width: 100% !important;
+  }
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 769px) {
+  .mobile-menu-btn {
+    display: none;
   }
 }
 
@@ -166,7 +182,7 @@
   }
 
   .content {
-    margin-left: 220px;
+    margin-left: 220px !important;
+    width: calc(100% - 220px) !important;
   }
 }
-
